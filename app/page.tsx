@@ -1,12 +1,12 @@
 'use client'
 import HomeSection from "@/components/ui/homeSection";
 import SectionSlide from "@/components/ui/sectionSlide";
-import { ReactLenis } from "@studio-freight/react-lenis";
+
 
 
 export default function Home() {
   return (
-    <ReactLenis root>
+    <div>
       <main>
         <article>
           <section className="grid-cols-1 place-content-center sticky top-0 w-full">
@@ -21,6 +21,6 @@ export default function Home() {
           </section>
         </article>
       </main>
-    </ReactLenis>
+    </div>
   );
 }
