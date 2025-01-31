@@ -100,7 +100,7 @@ export default function TestimonialSlider() {
          <div className="flex flex-row-reverse rounded-3xl gap-6 items-center border">
          <div className="w-[410px] bg-white  shadow-none">
             <div className="p-8 relative">
-              <div className="text-7xl text-black/10 absolute top-4 left-4 leading-none">"</div>
+              <div className="text-7xl text-black/10 absolute top-4 left-4 leading-none">&quot;</div>
               <p className="text-2xl mt-12 mb-8 leading-normal">{testimonials[currentSlide].quote}</p>
               <div className="flex justify-between items-center">
                 <div className="flex gap-4 text-sm text-black/70">
@@ -172,4 +172,3 @@ export default function TestimonialSlider() {
     </div>
   )
 }
-
