@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+
 const HomeSection = () => {
   const popular = [
     {
@@ -26,13 +27,14 @@ const HomeSection = () => {
   ];
 
   return (
-    <section className="">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+    <section className="pt-9">
+      <div data-aos="fade-down" className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
         <div className="space-y-4">
           <h3 className="text-sm text-gray-600">Premium Facilities</h3>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
             Exclusive Premium Facilities
           </h2>
+         
         </div>
         <div className="flex items-center">
           <p className="text-gray-600 text-lg">
@@ -42,36 +44,35 @@ const HomeSection = () => {
           </p>
         </div>
       </div>
+      
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {popular.map((item) => (
-          <div key={item.id} className="space-y-4">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
-              <motion.article
-                key={item.id}
-                className="relative group shadow-lg overflow-hidden rounded-xl"
-              >
-                {/* Image with a slight hover scale effect */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="h-72 w-full"
-                >
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    height={600}
-                    width={1200}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-in-out rounded-xl"
-                  />
-                </motion.div>
-              </motion.article>
+          
+            <div data-aos="zoom-in-up" key={item.id} className="space-y-4">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
+                <motion.article className="relative group shadow-lg overflow-hidden rounded-xl">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="h-72 w-full"
+                  >
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      height={600}
+                      width={1200}
+                      className="h-full w-full object-cover transition-transform duration-500 ease-in-out rounded-xl"
+                    />
+                  </motion.div>
+                </motion.article>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-2xl font-light">{item.title}</h3>
+                <p className="text-gray-600">{item.des}</p>
+              </div>
             </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-light">{item.title}</h3>
-              <p className="text-gray-600">{item.des}</p>
-            </div>
-          </div>
+        
         ))}
       </div>
     </section>
